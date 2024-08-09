@@ -17,7 +17,7 @@ export default function NavBar({ userName }) {
           method="post"
           action="logout"
           onSubmit={(event) => {
-            if (!confirm("Delete use data?")) {
+            if (!confirm("Delete all users data?")) {
               event.preventDefault();
             }
           }}
