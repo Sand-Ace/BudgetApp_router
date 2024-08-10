@@ -21,11 +21,17 @@ export const deleteData = ({ key }) => {
   return localStorage.removeItem(key);
 };
 
+// capitalize name
+
+export const capitalizeName = (val) => {
+  return val.charAt(0).toUpperCase() + val.slice(1);
+};
+
 // create Budget
 export const createBudget = ({ name, amount }) => {
   const newItem = {
     id: crypto.randomUUID(),
-    name: name,
+    name: capitalizeName(name),
     amount: +amount,
     createdAt: Date.now(),
     color: generateRandomColor(),
@@ -41,7 +47,7 @@ export const createBudget = ({ name, amount }) => {
 export const createExpense = ({ name, amount, budgetId }) => {
   const newItem = {
     id: crypto.randomUUID(),
-    name: name,
+    name: capitalizeName(name),
     amount: +amount,
     createdAt: Date.now(),
     budgetId: budgetId,
@@ -69,6 +75,11 @@ export const formatPercentage = (amount) => {
     style: "percent",
     minimumFractionDigits: 0,
   });
+};
+
+//format data
+export const formatDate = (epoch) => {
+  return new Date(epoch).toLocaleDateString();
 };
 
 // total spent
