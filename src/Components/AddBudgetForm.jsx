@@ -1,6 +1,6 @@
 import { CurrencyDollarIcon } from "@heroicons/react/24/solid";
 import { useEffect, useRef } from "react";
-import { Form, useFetcher } from "react-router-dom";
+import { useFetcher } from "react-router-dom";
 
 export default function AddBudgetForm() {
   const fetcher = useFetcher();
@@ -18,7 +18,12 @@ export default function AddBudgetForm() {
   return (
     <div className="form-wrapper">
       <h2 className="h3">Create Budget</h2>
-      <fetcher.Form method="post" className="grid-sm" ref={formRef}>
+      <fetcher.Form
+        method="post"
+        className="grid-sm"
+        ref={formRef}
+        fetcher={fetcher}
+      >
         <div className="grid-xs">
           <label htmlFor="newBudget">Budget Name</label>
           <input

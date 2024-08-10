@@ -9,5 +9,5 @@ export default async function LogoutAction() {
   });
   toast.success("You have sucessfully deleted your account");
 
-  return redirect("/logout");
+  return redirect("/");
 }
