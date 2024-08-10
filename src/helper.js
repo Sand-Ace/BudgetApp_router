@@ -1,3 +1,9 @@
+//wait helper
+
+export const wait = () =>
+  new Promise((res) => setTimeout(res, Math.random() * 5000));
+
+// colors
 const generateRandomColor = () => {
   const existingBudgetLength = fetchData("budgets")
     ? fetchData("budgets").length
